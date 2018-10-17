@@ -1,0 +1,22 @@
+.Book {
+  text-align: center;
+}
+
+.Book-logo {
+  height: 40vmin;
+}
+
+.Book-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Book-link {
+  color: #61dafb;
+}
