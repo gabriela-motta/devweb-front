@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Comment, Form, Header, Icon } from 'semantic-ui-react'
-import avatar from './avatar.png'
+import avatar from '../img/avatar.png'
 
 const BookReviews = () => (
   <Comment.Group>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Book from './Book';
+import Book from './components/Book';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Book />, document.getElementById('root'));
