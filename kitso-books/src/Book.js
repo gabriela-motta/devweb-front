@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import book from './book.svg';
+import BookHeader from './BookHeader'
+import Navbar from './Navbar'
+import { Image } from 'semantic-ui-react'
 
 class Book extends Component {
   render() {
     return (
       <div className="Book">
-        <p>
-          Book Info
-        </p>
-        <img src={book} className="Book-logo" alt="logo" />
+      <Navbar/>
+      <BookHeader/>
       </div>
     );
   }
