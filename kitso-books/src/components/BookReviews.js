@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Comment, Form, Header, Icon } from 'semantic-ui-react'
 import avatar from '../img/avatar.png'
+import RatingStars from './Rating'
 
 const BookReviews = () => (
   <Comment.Group>
@@ -67,6 +68,7 @@ const BookReviews = () => (
     <Form reply>
       <Form.TextArea />
       <Button content='Add your review' labelPosition='left' icon='edit' inverted secondary />
+      <RatingStars/>
     </Form>
   </Comment.Group>
 )

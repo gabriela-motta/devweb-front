@@ -14,8 +14,8 @@ export default class Navbar extends Component {
         <Menu inverted pointing secondary>
           <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
           <Menu.Item
-            name='messages'
-            active={activeItem === 'messages'}
+            name='books'
+            active={activeItem === 'books'}
             onClick={this.handleItemClick}
           />
           <Menu.Item
