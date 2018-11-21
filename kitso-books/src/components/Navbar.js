@@ -12,9 +12,6 @@ export default class Navbar extends Component {
     return (
       <Segment inverted>
         <Menu inverted pointing secondary>
-          <Menu.Item name='logo'>
-            <Icon name='book'/>
-          </Menu.Item>
           <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
           <Menu.Item
             name='books'
@@ -26,6 +23,10 @@ export default class Navbar extends Component {
             active={activeItem === 'friends'}
             onClick={this.handleItemClick}
           />
+          <Menu.Item name='Kitso Books' position="right" active={activeItem === 'Kitso Books'}>
+            <Icon name='book'/>
+            Kitso Books
+          </Menu.Item>
         </Menu>
       </Segment>
     )
