@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
-import RatingStars from './Rating'
-import Comments from './Comments'
+import RatingStars from '../Rating'
+import Comments from '../Comments'
 
 const BookReviews = () => (
   <Comment.Group>
