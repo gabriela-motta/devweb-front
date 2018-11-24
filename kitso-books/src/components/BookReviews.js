@@ -1,6 +1,5 @@
 import React from 'react'
-import { Button, Comment, Form, Header, Icon } from 'semantic-ui-react'
-import avatar from '../img/avatar.png'
+import { Button, Comment, Form, Header } from 'semantic-ui-react'
 import RatingStars from './Rating'
 import Comments from './Comments'
 

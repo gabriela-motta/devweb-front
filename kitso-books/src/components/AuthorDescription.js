@@ -1,6 +1,5 @@
 import React from 'react'
 import { Header} from 'semantic-ui-react'
-import avatar from '../img/avatar.png'
 
 const AuthorDescription = () => (
   <div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BookHeader from './BookHeader'
 import BookContainer from './BookContainer'
-import { Image, Container, Grid } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 import './Book.scss'
 
 class Book extends Component {

@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import Book from './components/Book';
-import Author from './components/Author';
 import './App.scss';
+import { Header, Icon } from 'semantic-ui-react'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <Book/>
+        <Header as='h1' icon textAlign='center'>
+          <Icon name='book' circular />
+          <Header.Content>Kitso Books</Header.Content>
+        </Header>
       </div>
     );
   }

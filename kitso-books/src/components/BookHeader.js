@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Icon, Image, Button } from 'semantic-ui-react'
+import { Header, Image, Button } from 'semantic-ui-react'
 import './BookHeader.scss'
 
 const BookHeader = () => (

@@ -1,7 +1,6 @@
 import React from 'react'
-import { Button, Comment, Form, Header, Icon } from 'semantic-ui-react'
+import { Comment, Icon } from 'semantic-ui-react'
 import avatar from '../img/avatar.png'
-import RatingStars from './Rating'
 
 const Comments = () => (
   <Comment.Group>

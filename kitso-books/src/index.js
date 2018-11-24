@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
+import App from './App';
 import Book from './components/Book';
 import Author from './components/Author';
 import Navbar from './components/Navbar';
@@ -12,9 +13,10 @@ ReactDOM.render(
     <Navbar/>
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact={true} component={Book} />
+        <Route path="/" exact={true} component={App} />
+        <Route path="/book" exact={true} component={Book} />
         <Route path="/author" component={Author} />
-        </Switch>
+      </Switch>
     </ BrowserRouter>
   </div>, document.getElementById('root'));
 

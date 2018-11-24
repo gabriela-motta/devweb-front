@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AuthorHeader from './AuthorHeader'
 import AuthorContainer from './AuthorContainer'
-import { Image, Container, Grid } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 import './Author.scss'
 
 class Author extends Component {
