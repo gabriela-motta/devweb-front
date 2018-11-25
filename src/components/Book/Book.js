@@ -5,16 +5,23 @@ import { Container, Grid } from 'semantic-ui-react'
 import './Book.scss'
 
 class Book extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: props.location.state.data
+    };
+  }
+
   render() {
     return (
       <div className="Book">
         <Container>
           <Grid stackable divided columns={2}>
             <Grid.Column width={4}>
-              <BookHeader/>
+              <BookHeader data={this.state.data}/>
             </Grid.Column>
             <Grid.Column width={12}>
-              <BookContainer/>
+              <BookContainer data={this.state.data}/>
             </Grid.Column>
           </Grid>
         </Container>

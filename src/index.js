@@ -14,7 +14,7 @@ ReactDOM.render(
       <Navbar/>
       <Switch>
         <Route path="/" exact={true} component={App} />
-        <Route path="/book" exact={true} component={Book} />
+        <Route path="/book/:bookId" exact={true} component={Book} />
         <Route path="/author" component={Author} />
       </Switch>
     </div>

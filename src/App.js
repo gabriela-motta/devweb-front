@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { Header, Icon } from 'semantic-ui-react'
+import { Header, Icon, List } from 'semantic-ui-react'
 import API from './api.js'
+import { Link } from 'react-router-dom'
 
 class App extends Component {
   constructor(props) {
@@ -27,9 +28,17 @@ class App extends Component {
           <Icon name='book' circular />
           <Header.Content>Kitso Books</Header.Content>
         </Header>
-        <ul>
-          { this.state.books.map(book => <li>{book.title}</li>)}
-        </ul>
+        <List>
+          { this.state.books.map(book =>
+            <List.Item
+              key={book._id}
+              content={book.title}
+              as={Link}
+              to={{
+                pathname: "/book/" + book._id,
+                state: { data: book }
+              }} />) }
+        </List>
       </div>
     );
   }
