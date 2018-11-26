@@ -39,18 +39,12 @@ class Navbar extends Component {
             to="/"
           />
           <Menu.Item
-            name='book'
-            active={activeItem === 'book'}
-            onClick={this.handleItemClick}
-            as={Link}
-            to="/book"
+            name='books'
+            active={false}
           />
           <Menu.Item
-            name='author'
-            active={activeItem === 'author'}
-            onClick={this.handleItemClick}
-            as={Link}
-            to="/author"
+            name='authors'
+            active={false}
           />
           <Menu.Item name='Kitso Books' position="right" active={activeItem === 'Kitso Books'}>
             <Icon name='book'/>

@@ -26,7 +26,7 @@ class BookHeader extends Component {
         <Image centered src={this.props.book.image} size='medium' />
         <Header as='h1' icon textAlign='center'>
           <Header.Content>{this.props.book.title}</Header.Content>
-          <Header sub textAlign='center'>Written by: {this.state.author.name}</Header>
+          <Header sub textAlign='center'>Written by: <a href={"/author/"+this.state.author._id}>{this.state.author.name}</a></Header>
         </Header>
         <Button content='Book Read' labelPosition='left' icon='check' secondary />
       </div>
