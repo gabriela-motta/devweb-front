@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
+import Signup from './components/Signup/Signup';
 import Book from './components/Book/Book';
 import Author from './components/Author/Author';
 import Navbar from './components/Navbar';
@@ -14,6 +15,7 @@ ReactDOM.render(
       <Navbar/>
       <Switch>
         <Route path="/" exact={true} component={App} />
+        <Route path="/signup" exact={true} component={Signup} />
         <Route path="/book/:bookId" exact={true} component={Book} />
         <Route path="/author/:authorId" component={Author} />
       </Switch>
