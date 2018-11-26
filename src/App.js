@@ -34,10 +34,7 @@ class App extends Component {
               key={book._id}
               content={book.title}
               as={Link}
-              to={{
-                pathname: "/book/" + book._id,
-                state: { data: book }
-              }} />) }
+              to={"/book/" + book._id} />) }
         </List>
       </div>
     );
