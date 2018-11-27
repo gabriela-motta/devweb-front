@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Header, Card, Container } from 'semantic-ui-react'
 import API from '../../api.js'
 import PageLoader from '../Loader'
-import BookCard from '../BookCard'
+import BookCard from './BookCard'
 
 class BooksPage extends Component {
   constructor(props) {

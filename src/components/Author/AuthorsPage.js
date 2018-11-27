@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Header, Card, Container, List, Image } from 'semantic-ui-react'
+import { Header, Container, List, Image } from 'semantic-ui-react'
 import API from '../../api.js'
 import { Link } from 'react-router-dom'
 import PageLoader from '../Loader'
-import BookCard from '../BookCard'
 
 class AuthorsPage extends Component {
   constructor(props) {

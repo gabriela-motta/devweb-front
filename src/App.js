@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { Header, Icon } from 'semantic-ui-react'
+import { Header, Icon, Button } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
           <Icon name='book' circular />
           <Header.Content>Kitso Books</Header.Content>
         </Header>
+        <Button content='Sign Up' secondary as={Link} to="/signup" />
       </div>
     );
   }
