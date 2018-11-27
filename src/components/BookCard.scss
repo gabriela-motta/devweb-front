@@ -1,0 +1,16 @@
+.imageCard {
+  height: 475px;
+  background-size: 100%;
+  width: 290px !important;
+}
+
+.bookCard p {
+  padding-right: 10px;
+  display: inline;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.bookCard p:hover {
+  color: #e03997 !important;
+}

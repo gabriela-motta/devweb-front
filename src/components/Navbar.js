@@ -10,10 +10,10 @@ class Navbar extends Component {
     let location = "";
     if (props.location.pathname === "/") {
       location = "home";
-    } else if (props.location.pathname === "/book") {
-      location = "book";
-    } else if (props.location.pathname === "/author") {
-      location = "author";
+    } else if (props.location.pathname === "/books") {
+      location = "books";
+    } else if (props.location.pathname === "/authors") {
+      location = "authors";
     }
 
     this.state = {
@@ -40,11 +40,17 @@ class Navbar extends Component {
           />
           <Menu.Item
             name='books'
-            active={false}
+            active={activeItem === 'books'}
+            onClick={this.handleItemClick}
+            as={Link}
+            to="/books"
           />
           <Menu.Item
             name='authors'
-            active={false}
+            active={activeItem === 'authors'}
+            onClick={this.handleItemClick}
+            as={Link}
+            to="/authors"
           />
           <Menu.Item name='Kitso Books' position="right" active={activeItem === 'Kitso Books'}>
             <Icon name='book'/>
