@@ -3,7 +3,7 @@ import AuthorHeader from './AuthorHeader'
 import AuthorContainer from './AuthorContainer'
 import { Container, Grid } from 'semantic-ui-react'
 import './Author.scss'
-import axios from 'axios'
+import API from '../../api.js'
 import PageLoader from '../Loader'
 
 class Author extends Component {
@@ -16,7 +16,7 @@ class Author extends Component {
   }
 
   componentDidMount() {
-    axios.get('api' + this.props.location.pathname)
+    API.get('api' + this.props.location.pathname)
       .then(res => {
         const author = res.data;
         this.setState({ author, isLoaded: true });
