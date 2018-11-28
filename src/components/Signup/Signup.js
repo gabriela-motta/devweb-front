@@ -16,11 +16,12 @@ class Signup extends Component {
 
     API.post('api/user', user)
       .then(res => {
-        console.log(res);
-        console.log(res.data);
+        if (res.status === 200) {
+          this.setState({ signupSuccess: true })
+        }
       })
 
-    this.setState({ username: '', email: '', password: '', signupSuccess: true })
+    this.setState({ username: '', email: '', password: '' })
   }
 
   render(){
