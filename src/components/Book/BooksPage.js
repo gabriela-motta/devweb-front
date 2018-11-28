@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Header, Card, Container } from 'semantic-ui-react'
-import API from '../../api.js'
 import PageLoader from '../Loader'
 import BookCard from './BookCard'
+import axios from 'axios'
 
 class BooksPage extends Component {
   constructor(props) {
@@ -14,11 +14,15 @@ class BooksPage extends Component {
   }
 
   componentDidMount() {
-    API.get('api/book')
+    axios.get('api/book')
       .then(res => {
         const books = res.data;
         this.setState({ books, isLoaded: true });
       });
+      axios.get('api/auth/')
+        .then(res => {
+          console.log(res.data)
+        });
   }
 
   render() {

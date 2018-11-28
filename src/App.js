@@ -12,6 +12,7 @@ class App extends Component {
           <Header.Content>Kitso Books</Header.Content>
         </Header>
         <Button content='Sign Up' secondary as={Link} to="/signup" />
+        <Button content='Login' secondary as={Link} to="/login" />
       </div>
     );
   }

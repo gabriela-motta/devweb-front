@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import Signup from './components/Signup/Signup';
+import Login from './components/Login/Login';
 import Book from './components/Book/Book';
 import BooksPage from './components/Book/BooksPage';
 import Author from './components/Author/Author';
@@ -18,6 +19,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/" exact={true} component={App} />
         <Route path="/signup" exact={true} component={Signup} />
+        <Route path="/login" exact={true} component={Login} />
         <Route path="/books" exact={true} component={BooksPage} />
         <Route path="/book/:bookId" exact={true} component={Book} />
         <Route path="/author/:authorId" component={Author} />

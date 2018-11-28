@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Container, List, Image } from 'semantic-ui-react'
-import API from '../../api.js'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
 import PageLoader from '../Loader'
 
@@ -14,7 +14,7 @@ class AuthorsPage extends Component {
   }
 
   componentDidMount() {
-    API.get('api/author')
+    axios.get('api/author')
       .then(res => {
         const authors = res.data;
         this.setState({ authors, isLoaded: true });
@@ -31,7 +31,7 @@ class AuthorsPage extends Component {
           </Header>
           <List divided vertical size="huge">
             {this.state.authors.map(author =>
-              <List.Item>
+              <List.Item key={author._id}>
                 <Image avatar src={author.image} />
                 <List.Content verticalAlign='middle'>
                   <List.Header as={Link} to={"/author/" + author._id}>{author.name}</List.Header>

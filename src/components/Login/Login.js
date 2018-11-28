@@ -2,30 +2,29 @@ import React, { Component } from 'react'
 import { Form, Container, Message, Icon } from 'semantic-ui-react'
 import axios from 'axios'
 
-class Signup extends Component {
-  state = { username: '', email: '', password: '', signupSuccess: false }
+class Login extends Component {
+  state = { username: '', password: '', signupSuccess: false }
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
   handleSubmit = () => {
     const user = {
       username: this.state.username,
-      email: this.state.email,
       password: this.state.password
     };
 
-    axios.post('api/user', user)
+    axios.post('api/auth', user)
       .then(res => {
         if (res.status === 200) {
           this.setState({ signupSuccess: true })
         }
       })
 
-    this.setState({ username: '', email: '', password: '' })
+    this.setState({ username: '', password: '' })
   }
 
   render(){
-    const { username, email, password } = this.state
+    const { username, password } = this.state
     if (this.state.signupSuccess){
       return (
         <Container>
@@ -40,8 +39,7 @@ class Signup extends Component {
         <Container>
           <Message
             attached
-            header='Welcome to Kitso Books!'
-            content='Fill out the form below to sign-up for a new account'
+            header='Login to Kitso Books!'
           />
           <Form className='attached fluid segment' onSubmit={this.handleSubmit}>
             <Form.Input
@@ -53,14 +51,6 @@ class Signup extends Component {
               value={username}
               onChange={this.handleChange} />
             <Form.Input
-              type="email"
-              autoComplete="email"
-              label="Email"
-              placeholder='Email'
-              name='email'
-              value={email}
-              onChange={this.handleChange} />
-            <Form.Input
               type="password"
               autoComplete="new-password"
               label="Password"
@@ -68,11 +58,11 @@ class Signup extends Component {
               name='password'
               value={password}
               onChange={this.handleChange} />
-            <Form.Button content='Sign Up' />
+            <Form.Button content='Login' />
           </Form>
           <Message attached='bottom' warning>
             <Icon name='help' />
-            Already signed up?&nbsp;<a href='/login'>Login here</a>&nbsp;instead.
+            Not a member?&nbsp;<a href='/signup'>Sign Up here</a>&nbsp;instead.
           </Message>
         </Container>
       )
@@ -80,4 +70,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup
+export default Login
