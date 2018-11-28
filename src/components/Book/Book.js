@@ -3,7 +3,7 @@ import BookHeader from './BookHeader'
 import BookContainer from './BookContainer'
 import { Container, Grid } from 'semantic-ui-react'
 import './Book.scss'
-import axios from 'axios'
+import API from '../../api.js'
 import PageLoader from '../Loader'
 
 class Book extends Component {
@@ -13,11 +13,10 @@ class Book extends Component {
       isLoaded: false,
       book: []
     };
-    console.log(props)
   }
 
   componentDidMount() {
-    axios.get('api/book/' + this.props.match.params.bookId)
+    API.get('api/book/' + this.props.match.params.bookId)
       .then(res => {
         const book = res.data;
         this.setState({ book, isLoaded: true });
