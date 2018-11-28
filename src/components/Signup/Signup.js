@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Container, Message, Icon } from 'semantic-ui-react'
-import axios from 'axios'
+import API from '../../api.js'
 
 class Signup extends Component {
   state = { username: '', email: '', password: '', signupSuccess: false }
@@ -14,7 +14,7 @@ class Signup extends Component {
       password: this.state.password
     };
 
-    axios.post('api/user', user)
+    API.post('api/user', user)
       .then(res => {
         if (res.status === 200) {
           this.setState({ signupSuccess: true })
