@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Container, List, Image } from 'semantic-ui-react'
-import axios from 'axios'
+import API from '../../api.js'
 import { Link } from 'react-router-dom'
 import PageLoader from '../Loader'
 
@@ -14,7 +14,7 @@ class AuthorsPage extends Component {
   }
 
   componentDidMount() {
-    axios.get('api/author')
+    API.get('api/author')
       .then(res => {
         const authors = res.data;
         this.setState({ authors, isLoaded: true });
@@ -22,7 +22,6 @@ class AuthorsPage extends Component {
   }
 
   render() {
-    console.log(this.state.isLoaded)
     if (this.state.isLoaded){
       return (
         <Container>
