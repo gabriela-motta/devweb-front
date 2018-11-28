@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Image, Button } from 'semantic-ui-react'
 import './BookHeader.scss'
-import axios from 'axios'
+import API from '../../api.js'
 
 class BookHeader extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class BookHeader extends Component {
   }
 
   componentDidMount() {
-    axios.get('api/author/' + this.props.author)
+    API.get('api/author/' + this.props.author)
       .then(res => {
         const author = res.data;
         this.setState({ author, isLoaded: true });
