@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Container, List, Image } from 'semantic-ui-react'
-import API from '../../api.js'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
 import PageLoader from '../Loader'
 
@@ -14,7 +14,7 @@ class AuthorsPage extends Component {
   }
 
   componentDidMount() {
-    API.get('api/author')
+    axios.get('https://kitso-books.herokuapp.com/api/author')
       .then(res => {
         const authors = res.data;
         this.setState({ authors, isLoaded: true });

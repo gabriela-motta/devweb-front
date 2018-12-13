@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Container, Message, Icon } from 'semantic-ui-react'
-import API from '../../api.js'
+import axios from 'axios'
+import SuccessBanner from '../SuccessBanner'
 
 class Signup extends Component {
   state = { username: '', email: '', password: '', signupSuccess: false }
@@ -14,7 +15,7 @@ class Signup extends Component {
       password: this.state.password
     };
 
-    API.post('api/user', user)
+    axios.post('https://kitso-books.herokuapp.com/api/user', user)
       .then(res => {
         if (res.status === 200) {
           this.setState({ signupSuccess: true })
@@ -28,12 +29,7 @@ class Signup extends Component {
     const { username, email, password } = this.state
     if (this.state.signupSuccess){
       return (
-        <Container>
-          <Message
-            success
-            header='Your user registration was successful'
-            content='You may now login with the username you have chosen'/>
-        </Container>
+        <SuccessBanner actionType="registration" nextAction="login with the username you have chosen." />
       )
     } else {
       return(

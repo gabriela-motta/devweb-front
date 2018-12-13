@@ -3,7 +3,7 @@ import BookHeader from './BookHeader'
 import BookContainer from './BookContainer'
 import { Container, Grid } from 'semantic-ui-react'
 import './Book.scss'
-import API from '../../api.js'
+import axios from 'axios'
 import PageLoader from '../Loader'
 
 class Book extends Component {
@@ -16,7 +16,7 @@ class Book extends Component {
   }
 
   componentDidMount() {
-    API.get('api/book/' + this.props.match.params.bookId)
+    axios.get('https://kitso-books.herokuapp.com/api/book/' + this.props.match.params.bookId)
       .then(res => {
         const book = res.data;
         this.setState({ book, isLoaded: true });
