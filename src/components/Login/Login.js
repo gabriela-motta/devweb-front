@@ -14,14 +14,19 @@ class Login extends Component {
       password: this.state.password
     };
 
-    axios.post('https://kitso-books.herokuapp.com/api/auth', user)
+    axios.post('https://kitso-books.herokuapp.com/api/auth', user, {headers: {'Content-Type': 'application/json'}, withCredentials: true})
       .then(res => {
         if (res.status === 200) {
           this.setState({ signupSuccess: true })
         }
-      })
-
+        axios.get('https://kitso-books.herokuapp.com/api/auth', {headers: {'Content-Type': 'application/json'}, withCredentials: true})
+        .then(res => {
+          if (res.data.status){
+            localStorage.setItem('current_user', JSON.stringify(res.data.user));
+          }
+        })
     this.setState({ username: '', password: '' })
+    })
   }
 
   render(){
