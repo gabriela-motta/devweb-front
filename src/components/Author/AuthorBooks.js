@@ -17,7 +17,6 @@ class AuthorBooks extends Component {
 
   handleNewBook = createdBook => {
     this.setState({ isLoaded: false })
-    console.log(createdBook)
     this.setState(state => ({
       books: state.books.concat(createdBook),
       isLoaded: true
@@ -34,7 +33,6 @@ class AuthorBooks extends Component {
 
   render(){
     let booksContent;
-    console.log(this.state.books)
 
     if (this.state.isLoaded) {
       if (this.state.books.length > 0) {
@@ -64,8 +62,8 @@ class AuthorBooks extends Component {
 
     return (
       <Grid className="AuthorBooks">
-        <Grid.Column width={12}>
-          <Header as='h1' >
+        <Grid.Column width={12} className="title">
+          <Header as='h1'>
             <Header.Content > Books by this author
             </Header.Content>
           </Header>

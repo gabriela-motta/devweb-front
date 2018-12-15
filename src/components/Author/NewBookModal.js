@@ -88,19 +88,19 @@ export default class NewBookModal extends Component {
           {(this.state.submited) ?
           <Modal.Content className="submited">
             {loader}
-            <Transition visible={(!this.state.isLoading && this.state.bookCreated)} animation='horizontal flip' duration={500} onStart={this.handleCreatedTransition}>
+            <Transition visible={(!this.state.isLoading && this.state.bookCreated)} animation='scale' duration={500} onStart={this.handleCreatedTransition}>
               <Container textAlign="center">
                 <Header as="h2">
-                  <Icon name='check circle' color="green" />
+                  <Icon name='thumbs up outline' />
                   Book Created!
                 </Header>
               </Container>
             </Transition>
 
-            <Transition visible={!(this.state.isLoading || this.state.bookCreated)} animation='horizontal flip' duration={500} onStart={this.handleCreatedTransition}>
+            <Transition visible={!(this.state.isLoading || this.state.bookCreated)} animation='scale' duration={500} onStart={this.handleCreatedTransition}>
               <Container textAlign="center">
                 <Header as="h2">
-                  <Icon name='times circle outline' color="red" />
+                  <Icon name='thumbs down outline' />
                   An error ocurred, sorry =(
                 </Header>
               </Container>
