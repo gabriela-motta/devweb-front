@@ -9,7 +9,7 @@ class AuthorContainer extends Component {
     return(
       <Container className="AuthorContainer" textAlign='justified'>
         <AuthorDescription description={this.props.author.description}/>
-        <AuthorBooks/>
+        <AuthorBooks author={this.props.author._id}/>
       </Container>
     )
   }

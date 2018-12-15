@@ -12,7 +12,7 @@ class AuthorHeader extends Component {
         </Header>
         <p> Country: {this.props.author.country} </p>
 
-        <Button content='Follow' labelPosition='left' icon='plus' inverted secondary />
+        <Button content='Create new book' labelPosition='left' icon='plus' inverted secondary />
       </div>
     );
   }

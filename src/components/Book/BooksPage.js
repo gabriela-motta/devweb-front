@@ -9,30 +9,35 @@ class BooksPage extends Component {
     super(props);
     this.state = {
       isLoaded: false,
-      books: []
+      books: [],
+      title: "Books"
     };
   }
 
   componentDidMount() {
-    axios.get('https://kitso-books.herokuapp.com/api/book')
-      .then(res => {
-        const books = res.data;
-        this.setState({ books, isLoaded: true });
+    if (this.props.author) {
+      axios.get('https://kitso-books.herokuapp.com/api/book/author/' + this.props.author)
+        .then(res => {
+          const books = res.data;
+          this.setState({ books, isLoaded: true, title: "Books by this author" });
       });
-      axios.get('https://kitso-books.herokuapp.com/api/auth/')
-          .then(res => {
-            console.log(res.data)
-          });
+    } else {
+      axios.get('https://kitso-books.herokuapp.com/api/book')
+        .then(res => {
+          const books = res.data;
+          this.setState({ books, isLoaded: true });
+      });
+    }
   }
 
   render() {
     if (this.state.isLoaded){
       return (
-        <Container>
+        <Container className="BooksPage">
           <Header as='h2' dividing>
-            Books
+            {this.state.title}
           </Header>
-          <Card.Group stackable itemsPerRow={this.state.books.length < 4 ? (this.state.books.length) : (4)}>
+          <Card.Group className="CardGroup" stackable itemsPerRow={this.state.books.length < 4 ? (this.state.books.length) : (4)}>
               {this.state.books.map(book => (
                 <BookCard key={book._id}
                       image={book.image}

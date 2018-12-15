@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
-import { Header } from 'semantic-ui-react'
+import BooksPage from '../Book/BooksPage'
 import './AuthorBooks.scss'
 
 class AuthorBooks extends Component {
   render(){
     return(
       <div className="AuthorBooks">
-        <Header as='h3' dividing>
-          Books by this author
-        </Header>
+        <BooksPage author={this.props.author}/>
       </div>
     )
   }

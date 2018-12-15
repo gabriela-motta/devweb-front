@@ -28,7 +28,7 @@ class AuthorsPage extends Component {
           <Header as='h2' dividing>
             Authors
           </Header>
-          <List divided vertical size="huge">
+          <List divided vertical="true" size="huge">
             {this.state.authors.map(author =>
               <List.Item key={author._id}>
                 <Image avatar src={author.image} />
