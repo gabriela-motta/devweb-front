@@ -16,9 +16,11 @@ class AuthorBooks extends Component {
   }
 
   handleNewBook = createdBook => {
+    this.setState({ isLoaded: false })
     console.log(createdBook)
     this.setState(state => ({
-      books: state.books.concat(createdBook)
+      books: state.books.concat(createdBook),
+      isLoaded: true
     }));
   };
 
