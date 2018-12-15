@@ -10,23 +10,23 @@ class BooksPage extends Component {
     this.state = {
       isLoaded: false,
       books: [],
-      title: "Books"
+      title: ""
     };
   }
 
+  getAllBooks() {
+    axios.get('https://kitso-books.herokuapp.com/api/book')
+      .then(res => {
+        const books = res.data;
+        this.setState({ books, isLoaded: true, title: "Books" });
+    });
+  }
+
   componentDidMount() {
-    if (this.props.author) {
-      axios.get('https://kitso-books.herokuapp.com/api/book/author/' + this.props.author)
-        .then(res => {
-          const books = res.data;
-          this.setState({ books, isLoaded: true, title: "Books by this author" });
-      });
+    if (this.props.books) {
+      this.setState({ books: this.props.books, isLoaded: true });
     } else {
-      axios.get('https://kitso-books.herokuapp.com/api/book')
-        .then(res => {
-          const books = res.data;
-          this.setState({ books, isLoaded: true });
-      });
+      this.getAllBooks();
     }
   }
 
