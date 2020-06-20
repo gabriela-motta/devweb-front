@@ -20,10 +20,10 @@ ReactDOM.render(
         <Route path="/" exact={true} component={App} />
         <Route path="/signup" exact={true} component={Signup} />
         <Route path="/login" exact={true} component={Login} />
-        <Route path="/books" exact={true} component={BooksPage} />
+        <Route path="/book" exact={true} component={BooksPage} />
         <Route path="/book/:bookId" exact={true} component={Book} />
         <Route path="/author/:authorId" component={Author} />
-        <Route path="/authors" exact={true} component={AuthorsPage} />
+        <Route path="/author" exact={true} component={AuthorsPage} />
       </Switch>
     </div>
   </ BrowserRouter>, document.getElementById('root'));
